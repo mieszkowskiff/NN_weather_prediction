@@ -299,7 +299,7 @@ class NeuralNetwork:
         self.biases_gradient = [np.zeros((int(self.structure[i + 1]), 1), dtype = np.float32) for i in range(self.layers)]
         #print("update time: ", time.time() - start_time_update)
 
-    def perform_training(self, X_train, Y_train, X_test, Y_test, batch_size=10, learning_rate=0.5, number_of_epochs=100, monitor_w = 2, monitor_b = 1):
+    def perform_training(self, X_train, Y_train, X_test = None, Y_test = None, batch_size=10, learning_rate=0.5, number_of_epochs=100, monitor_w = 2, monitor_b = 1):
         
         # training parameters
         self.BATCH_SIZE = batch_size
@@ -347,7 +347,8 @@ class NeuralNetwork:
                     #print("batch time: ", time_batch)
                 
                 # NN learning monitor
-                costs[j*num_of_breaks + b] = self.cost(X_test, Y_test)
+                if X_test is not None and Y_test is not None:
+                    costs[j*num_of_breaks + b] = self.cost(X_test, Y_test)
 
                 for lay in range(self.layers):
                     for m in range(monitor_w): 

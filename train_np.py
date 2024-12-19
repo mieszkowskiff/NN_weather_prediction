@@ -1,4 +1,3 @@
-import read_data
 import ai_np
 import numpy as np
 import itertools
