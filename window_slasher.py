@@ -19,7 +19,7 @@ CONST_window_day_size = CONST_n+CONST_m
 CONST_window_tick_size = CONST_window_day_size * CONST_day_ticks
 
 # load data
-df = pd.DataFrame(read_csv('./proc_data/concat_clean_data_new.csv', sep=",", header=None))
+df = pd.DataFrame(read_csv('./proc_data/concat_clean_data.csv', sep=",", header=None))
 # delete first 11 hours because they come from incomplete day
 df = df[12:-1]
 # take every CONST_SKIP_HOURS hour( every CONST_SKIP_HOURS observation), to reduce the amount of data
