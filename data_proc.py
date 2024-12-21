@@ -243,8 +243,8 @@ for i in range(1, c):
     cities_weather[0] = cities_weather[0].join(cities_weather[i])
 
 
-cities_weather[0]["days_dir1"] = days_dir1
-cities_weather[0]["days_dir2"] = days_dir2
+#cities_weather[0]["days_dir1"] = days_dir1
+#cities_weather[0]["days_dir2"] = days_dir2
 cities_weather[0]["hour"] = hour
 
 
